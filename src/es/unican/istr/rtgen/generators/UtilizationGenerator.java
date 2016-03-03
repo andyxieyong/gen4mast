@@ -114,7 +114,7 @@ public class UtilizationGenerator<LS extends LinearSystem, RTT extends Tool>
 
                     // Break loop at first non schedulable system in the series
                     if (!sys.isSchedulable()){
-                        //break;
+                        break;
                     }
 
                     // Update maximum schedulable utilization
