@@ -1,0 +1,1 @@
+Se crean con el comando xjc archivo.xsd
