@@ -102,7 +102,7 @@ public class MastTool implements Tool {
 
         //If HOSPA is used, create HOSPA params file
         createHospaParamsFile(new File(hospaParamsPath.toAbsolutePath().toString()), c.getHospaConfig());
-        args.add(String.format("-a %s", hospaParamsPath.toAbsolutePath().toString()));
+        args.add(String.format("-a \"%s\"", hospaParamsPath.toAbsolutePath().toString()));
 
         //If new assignment is performed, save updated model with new assignment
         if (c.getAssignment() != AssignmentOptions.NONE){
@@ -115,7 +115,7 @@ public class MastTool implements Tool {
 
         //Create string
         String cmd = String.join(" ", args);
-        //system.out.println(cmd);
+        //System.out.println(cmd);
 
         //Store tool configuration in system
         system.setToolConfig(config);
@@ -146,6 +146,7 @@ public class MastTool implements Tool {
             //System.out.println(cmd);
             launchCommand(cmd, timeout, stdOutputFilePath.toAbsolutePath().toString(), workingDirectory.toAbsolutePath().toString());
 
+            //System.out.println("despues");
 
 //          String text = IOUtils.toString(p.getInputStream(), StandardCharsets.UTF_8.name());
 //          System.out.println(text);
@@ -202,31 +203,46 @@ public class MastTool implements Tool {
     private static void launchCommand(String command, Long timeoutMilliSeconds, String stdOutputFile, String workingDirectory) throws InterruptedAnalysis {
 
         // Define executor
+        //System.out.print("launch");
         CommandLine commandLine = CommandLine.parse(command);
         DefaultExecutor executor = new DefaultExecutor();
         executor.setExitValues(null);  // doesn't check correct exit values
         executor.setWorkingDirectory(new File(workingDirectory));
+
+        //System.out.print("q");
 
         // Standard Output Handling
         ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
         PumpStreamHandler streamHandler = new PumpStreamHandler(outputStream);
         executor.setStreamHandler(streamHandler);
 
+        //System.out.print("w");
+
         ExecuteWatchdog dog = null;
         if (timeoutMilliSeconds != null) {
             // Define watchdog (for timeout)
             dog = new ExecuteWatchdog(timeoutMilliSeconds);
+            //System.out.print("e");
             executor.setWatchdog(dog);
+            //System.out.print("r");
         }
 
         // Execute command
         try {
+            //System.out.print("t");
             int exitValue = executor.execute(commandLine);
-        } catch (ExecuteException e) {
-            throw new InterruptedAnalysis();
-        } catch (IOException e2) {
+            //System.out.print("x");
+        } catch (Exception e) {
+            //System.out.print("A");
+            //System.out.println(e.getMessage());
             throw new InterruptedAnalysis();
         }
+//        catch (IOException e2) {
+//            System.out.print("B");
+//            throw new InterruptedAnalysis();
+//        }
+
+        System.out.print("+");
 
         try {
             if (stdOutputFile != null) {
@@ -237,11 +253,13 @@ public class MastTool implements Tool {
                 fileOutput.close();
             }
         } catch (IOException e) {
+            //System.out.print("C");
             throw new InterruptedAnalysis();
         }
 
         if (dog != null) {
             if (dog.killedProcess()) {
+                //System.out.print("D");
                 throw new InterruptedAnalysis();
             }
         }
@@ -284,6 +302,7 @@ public class MastTool implements Tool {
 
 
         } catch (JAXBException e) {
+            //System.out.print("E");
             System.out.println("Error in results file: "+results.getAbsolutePath());
             e.printStackTrace();
         }

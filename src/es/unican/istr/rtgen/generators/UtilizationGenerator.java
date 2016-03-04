@@ -102,8 +102,8 @@ public class UtilizationGenerator<LS extends LinearSystem, RTT extends Tool>
 
                 try {
                     // Analyze system (results saved in system)
-                    tool.analyze(sys, getToolConfig());
                     System.out.printf(" %d", u);
+                    tool.analyze(sys, getToolConfig());
 
                     // Update total series time
                     totalSeriesTime += sys.getToolTimeElapsed();
@@ -122,7 +122,7 @@ public class UtilizationGenerator<LS extends LinearSystem, RTT extends Tool>
 
                 } catch (Exception e){
                     interrupted = true;
-                    //e.printStackTrace();
+                    e.printStackTrace();
                     // Some error in the analysis, for example it timed-out.
                     break;
                 }

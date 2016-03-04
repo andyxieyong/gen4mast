@@ -153,7 +153,7 @@ public class ClusterTorqueDispatcher<G extends Generator, LS extends LinearSyste
                     argsL.addAll(Arrays.asList(t.getConfigAsArgs()));
 
                     // Create command
-                    String cmd = String.format("  java -XX:-UseCompressedClassPointers -jar %s %s", config.getGeneratorJarPath(), String.join(" ", argsL));
+                    String cmd = String.format("  java -Xms256m -Xmx256m -XX:-UseCompressedClassPointers -jar %s %s", config.getGeneratorJarPath(), String.join(" ", argsL));
                     // If -XX:-UseCompressedClassPointers is not provided, Could not allocate metaspace: 1073741824 bytes error is raised in the cluster
                     cmdsInJob.add(cmd);
 
