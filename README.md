@@ -9,11 +9,11 @@ This is a quick tutorial of Gen4MAST. This tutorial uses the jar release of Gen4
 
 To execute Gen4MAST, a properties file must be created. This file specifies the characteristics of the systems to be generated, and which MAST techniques to apply on them, such as schedulability analyses or priority optimizations. The properties file used in this tutorial can be downloaded [here] (https://github.com/rivasjm/gen4mast/raw/master/releases/gen4mast.properties). 
 
-## Setting up the execution environment
+### Setting up the execution environment
 
-Gen4MAST requires Java version 1.8.
+Gen4MAST requires Java version 1.8. Before executing Gen4MAST, the user must modify the properties file to indicate the location of the MAST Analysis tool (mast_analysis.exe in windows). This is specified with key **MAST_PATH** in the provided properties file. 
 
-## Execuring Gen4MAST
+### Executing Gen4MAST
 
 Gen4MAST can be launched as a standard executable java jar file as follows:
 
@@ -22,3 +22,5 @@ java -jar gen4mast.jar path_to_properties_file
 ```
 
 If the path to the properties file is not proviedd, Gen4MAST will look for a file called "gen4mast.properties" in the current directory.
+
+The properties file of this tutorial 
