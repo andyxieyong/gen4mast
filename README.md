@@ -34,3 +34,9 @@ During the execution of Gen4MAST, a directory called **results** will be created
 After executing Gen4MAST, a SQLite database with the results is generated. This database can be accessed programatically with any programming language that supports SQLite, for example Python (sqlite3 library). 
 
 Additionally, the results database can be accessed using special purpose programs such as [DB Browser for SQLite](http://sqlitebrowser.org/).
+
+# Properties File
+
+| Property | Description |
+| ---------| ----------- |
+| SEED     | Seed numbers |
