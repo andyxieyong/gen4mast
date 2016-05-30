@@ -42,3 +42,19 @@ All properties must be specified in the file, no defualts values are assumed.
 | Property | Description |
 | ---------| ----------- |
 | SEED     | Seed numbers |
+| N_PROCESSORS | Number of processors |
+| N_FLOWS | =5 | 
+| N_TASKS |  | 
+| RANDOM_LENGTH | =False | 
+| SINGLE_FLOWS | =0 | 
+| SCHED_POLICY | =FP | 
+| PERIOD_DISTRIBUTION | =UNIFORM | 
+| PERIOD_BASE | =10 | 
+| PERIOD_RATIO | =1000 | 
+| DEADLINE | =NT | 
+| TASK_LOCALIZATION | =RANDOM | 
+| UTILIZATION | =10 | 
+| UTILIZATION_BCET_FACTOR | =0 | 
+| UTILIZATION_WCET_METHOD | =SCALE,UUNIFAST | 
+| UTILIZATION_BALANCING | =BALANCED | 
+-------------------------------------
