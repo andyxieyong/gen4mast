@@ -39,22 +39,24 @@ Additionally, the results database can be accessed using special purpose program
 
 All properties must be specified in the file, no defualts values are assumed.
 
+## System characteristics section
+
 | Property | Description |
 | ---------| ----------- |
 | SEED     | Seed numbers |
 | N_PROCESSORS | Number of processors |
-| N_FLOWS | =5 | 
+| N_FLOWS |  | 
 | N_TASKS |  | 
-| RANDOM_LENGTH | =False | 
-| SINGLE_FLOWS | =0 | 
-| SCHED_POLICY | =FP | 
-| PERIOD_DISTRIBUTION | =UNIFORM | 
-| PERIOD_BASE | =10 | 
-| PERIOD_RATIO | =1000 | 
-| DEADLINE | =NT | 
-| TASK_LOCALIZATION | =RANDOM | 
-| UTILIZATION | =10 | 
-| UTILIZATION_BCET_FACTOR | =0 | 
-| UTILIZATION_WCET_METHOD | =SCALE,UUNIFAST | 
-| UTILIZATION_BALANCING | =BALANCED | 
+| RANDOM_LENGTH |  | 
+| SINGLE_FLOWS |  | 
+| SCHED_POLICY |  | 
+| PERIOD_DISTRIBUTION |  | 
+| PERIOD_BASE |  | 
+| PERIOD_RATIO |  | 
+| DEADLINE |  | 
+| TASK_LOCALIZATION |  | 
+| UTILIZATION |  | 
+| UTILIZATION_BCET_FACTOR |  | 
+| UTILIZATION_WCET_METHOD |  | 
+| UTILIZATION_BALANCING |  | 
 -------------------------------------
