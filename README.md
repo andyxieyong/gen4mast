@@ -15,12 +15,17 @@ Gen4MAST requires Java version 1.8. Before executing Gen4MAST, the user must mod
 
 ### Executing Gen4MAST
 
+The properties file of this tutorial generates a synthetic pool of distributed systems using two different WCET generation methods: SCALE and UUNIFAST. This pool can be used to study the differences on schedulability of these two techniques. For this tutorial, the Offset-Based Analysis is applied to each generated system, and the results are stored in an SQLite database. Five different seeds numbers are used to generated the systems.
+
 Gen4MAST can be launched as a standard executable java jar file as follows:
 
 ```
 java -jar gen4mast.jar path_to_properties_file
 ```
 
-If the path to the properties file is not proviedd, Gen4MAST will look for a file called "gen4mast.properties" in the current directory.
+If the path to the properties file is not provided, Gen4MAST will look for a file called "gen4mast.properties" in the current directory.
 
-The properties file of this tutorial 
+During the execution of Gen4MAST, a directory called **results** will be created, in which the intermediate MAST results are stored. This results are then compiled into a SQLite database in the current directory (results.db).
+
+### SQLite Results Format
+
