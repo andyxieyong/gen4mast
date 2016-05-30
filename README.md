@@ -3,7 +3,7 @@
 Gen4MAST is a tool to automatically generate MAST models, and apply the MAST tool on them. This is a generalization using Java of the GEN4MAST prototype built using Python (http://mast.unican.es/gen4mast/).
 Gen4MAST is provided as open source. An executable pre-compiled jar file is also available in this [link](https://github.com/rivasjm/gen4mast/raw/master/releases/gen4mast.jar/).
 
-# Quick Tutorial
+# Quick Tutorial for execution in the Local PC
 
 This is a quick tutorial of Gen4MAST. This tutorial uses the jar release of Gen4MAST that can be downloaded from [here](https://github.com/rivasjm/gen4mast/raw/master/releases/gen4mast.jar/). 
 
@@ -13,7 +13,7 @@ To execute Gen4MAST, a properties file must be created. This file specifies the 
 
 Gen4MAST requires Java version 1.8. Before executing Gen4MAST, the user must modify the properties file to indicate the location of the MAST Analysis tool (mast_analysis.exe in windows). This is specified with key **MAST_PATH** in the provided properties file. 
 
-### Executing Gen4MAST
+### Executing Gen4MAST in the local PC
 
 The properties file of this tutorial generates a synthetic pool of distributed systems using two different WCET generation methods: SCALE and UUNIFAST. This pool can be used to study the differences on schedulability of these two techniques. For this tutorial, the Offset-Based Analysis is applied to each generated system, and the results are stored in an SQLite database. Five different seeds numbers are used to generated the systems. A thread pool of size 4 is used to execute this study (parameter **THREAD_POOL_SIZE** of the properties file). 
 
@@ -31,4 +31,6 @@ During the execution of Gen4MAST, a directory called **results** will be created
 
 ### SQLite Results Format
 
-After executing Gen4MAST, a SQLite database with the results is generated. This database can be opened for example with [DB Browser for SQLite](http://sqlitebrowser.org/) 
+After executing Gen4MAST, a SQLite database with the results is generated. This database can be accessed programatically with any programming language that supports SQLite, for example Python (sqlite3 library). 
+
+Additionally, the results database can be accessed using special purpose programs such as [DB Browser for SQLite](http://sqlitebrowser.org/).
