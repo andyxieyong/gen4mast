@@ -37,6 +37,8 @@ Additionally, the results database can be accessed using special purpose program
 
 # Properties File
 
+All properties must be specified in the file, no defualts values are assumed.
+
 | Property | Description |
 | ---------| ----------- |
 | SEED     | Seed numbers |
