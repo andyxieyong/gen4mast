@@ -1,4 +1,4 @@
-# Gen4MAST
+# What it is
 
 Gen4MAST is a tool to automatically generate MAST models, and apply the MAST tool on them. This is a generalization using Java of the GEN4MAST prototype built using Python (http://mast.unican.es/gen4mast/).
 Gen4MAST is provided as open source. An executable pre-compiled jar file is also available in this [link](https://github.com/rivasjm/gen4mast/raw/master/releases/gen4mast.jar/).
@@ -15,7 +15,7 @@ Gen4MAST requires Java version 1.8. Before executing Gen4MAST, the user must mod
 
 ### Executing Gen4MAST
 
-The properties file of this tutorial generates a synthetic pool of distributed systems using two different WCET generation methods: SCALE and UUNIFAST. This pool can be used to study the differences on schedulability of these two techniques. For this tutorial, the Offset-Based Analysis is applied to each generated system, and the results are stored in an SQLite database. Five different seeds numbers are used to generated the systems.
+The properties file of this tutorial generates a synthetic pool of distributed systems using two different WCET generation methods: SCALE and UUNIFAST. This pool can be used to study the differences on schedulability of these two techniques. For this tutorial, the Offset-Based Analysis is applied to each generated system, and the results are stored in an SQLite database. Five different seeds numbers are used to generated the systems. A thread pool of size 4 is used to execute this study (parameter **THREAD_POOL_SIZE** of the properties file). 
 
 Gen4MAST can be launched as a standard executable java jar file as follows:
 
@@ -25,7 +25,10 @@ java -jar gen4mast.jar path_to_properties_file
 
 If the path to the properties file is not provided, Gen4MAST will look for a file called "gen4mast.properties" in the current directory.
 
+The generation and execution of this tutorial takes a few seconds, depending on the computer used.
+
 During the execution of Gen4MAST, a directory called **results** will be created, in which the intermediate MAST results are stored. This results are then compiled into a SQLite database in the current directory (results.db).
 
 ### SQLite Results Format
 
+After executing Gen4MAST, a SQLite database with the results is generated. This database can be opened for example with [DB Browser for SQLite](http://sqlitebrowser.org/) 
