@@ -79,30 +79,30 @@ This properties specify the characteristics of the systems to be generated.
 | WORK_PATH | Working path in which all intermediate files will be generated | 
 | MAST_PATH | Path of the MAST tool main executable (mast_analysis.exe in windows). Version 1.4 and above of MAST is required | 
 | ANALYSIS_TOOL | Which schedulability analysis tool to apply. A description of the available techniques can be found [here](http://mast.unican.es/mast_analysis_techniques.pdf). Available options in Gen4MAST: *HOLISTIC* (Holistic Analysis), *OFFSET* (Offset Based Approximate Analysis), *OFFSET_SLANTED* (Offset Based Slanted Analysis), *OFFSET_OPT* (Offset Based Approximate with Precedence Relations Analysis), *BRUTE_FORCE* (Offset Based Brute Force Analysis)| 
-| ASSIGNMENT_TOOL |  | 
-| SYNC |  | 
-| HOSPA_INIT |  | 
-| HOSPA_KA |  | 
-| HOSPA_KR |  | 
-| HOSPA_ITERATIONS |  | 
-| HOSPA_OVERITERATIONS |  | 
-| ANALYSIS_STOP_FACTOR |  | 
-| LC_EDF_GSD |  | 
-| LC_EDF_DS_FACTOR |  | 
-| CALCULATE_SLACK |  | 
-| JITTER_AVOIDANCE |  | 
-| ANALYSIS_TIMEOUT |  | 
+| ASSIGNMENT_TOOL | Which scheduling parameters assignment technique to apply. A description of the available techniques can be found [here](http://mast.unican.es/mast_analysis_techniques.pdf). Available options in Gen4MAST: *UD, ED, PD, NPD, HOSPA*| 
+| SYNC | Boolean that indicates if the clocks of the processing resources are going to be synchronized or not.  This is relevant for EDF scheduling. If clocks are syncrhonized, GC-EDF scheduling is used, otherwise LC-EDF scheudling is used. | 
+| HOSPA_INIT | Initial assignment used if HOSPA is used as the scheduling parameter assignment: *PD, NPD* | 
+| HOSPA_KA | *Ka* parameters for HOSPA | 
+| HOSPA_KR | *Kr* parameters for HOSPA  | 
+| HOSPA_ITERATIONS | Maximum number of iterations that HOSPA is going to perform  | 
+| HOSPA_OVERITERATIONS | Maximum number of iterations over an already schedulable solution that HOSPA is going to perform. This over-iterations further optimize the solution  | 
+| ANALYSIS_STOP_FACTOR | The analysis stops if at any moment, any worst-case response time calculated is larger that *ANALYSIS_STOP_FACTOR* times the deadline | 
+| LC_EDF_GSD | Boolean that indicates if LC-EDF-GSD scheduling deadline assignment is used [link](http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6905828). With LC-EDF-GSD enabled, global scheduling deadlines are assigned in LC-EDF   | 
+| LC_EDF_DS_FACTOR | Integer that indicates the LC-EDF-DS scheduling deadline assignment factor [link](http://ieeexplore.ieee.org/xpl/articleDetails.jsp?arnumber=6905828). The scheduling deadlines are scaled by a factor *LC_EDF_DS_FACTOR* | 
+| CALCULATE_SLACK | Boolean that enables the claculation of the system slack | 
+| JITTER_AVOIDANCE | Boolean that activates the emulation of a jitter avoidance technique in the schedulability analysis (*not yet implemented in MAST*)   | 
+| ANALYSIS_TIMEOUT | Timeout in milliseconds of the schedulability analysis  | 
 -----------------------------
 
 ## Dispatcher options
 
 | Property | Description |
 | ---------| ----------- |
-| DISPATCHER |  | 
-| THREAD_POOL_SIZE |  |
-| GENERATOR_JAR_PATH |  | 
-| CLUSTER_USER_EMAIL |  |  
-| NUMBER_OF_CLUSTER_JOBS |  | 
+| DISPATCHER | Indicated which job dispatcher to use: *LOCAL* for local execution, and "CLUSTER_TORQUE* for dispatch of jobs in the nodes of a supercomputer | 
+| THREAD_POOL_SIZE | **FOR LOCAL DISPATCHER ONLY**. Thread pool size  |
+| GENERATOR_JAR_PATH | **FOR CLUSTER_TORQUE DISPATCHER ONLY** Path for the generator (e.g. Utilization Series Generator) jar file. In the supercomputer, that generator is executed as an independent jar program| 
+| CLUSTER_USER_EMAIL | **FOR CLUSTER_TORQUE DISPATCHER ONLY** User email |  
+| NUMBER_OF_CLUSTER_JOBS | **FOR CLUSTER_TORQUE DISPATCHER ONLY** Number of cluster jobs to be sent to the nodes | 
 -----------------------------
 
 ## Utilization Series Generator options
