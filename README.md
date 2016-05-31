@@ -98,7 +98,7 @@ This properties specify the characteristics of the systems to be generated.
 
 | Property | Description |
 | ---------| ----------- |
-| DISPATCHER | Indicated which job dispatcher to use: *LOCAL* for local execution, and "CLUSTER_TORQUE* for dispatch of jobs in the nodes of a supercomputer | 
+| DISPATCHER | Indicated which job dispatcher to use: *LOCAL* for local execution, and *CLUSTER_TORQUE* for dispatch of jobs in the nodes of a supercomputer | 
 | THREAD_POOL_SIZE | **FOR LOCAL DISPATCHER ONLY**. Thread pool size  |
 | GENERATOR_JAR_PATH | **FOR CLUSTER_TORQUE DISPATCHER ONLY** Path for the generator (e.g. Utilization Series Generator) jar file. In the supercomputer, that generator is executed as an independent jar program| 
 | CLUSTER_USER_EMAIL | **FOR CLUSTER_TORQUE DISPATCHER ONLY** User email |  
@@ -109,17 +109,17 @@ This properties specify the characteristics of the systems to be generated.
 
 | Property | Description |
 | ---------| ----------- |
-| GENERATOR |  | 
-| CLEAN_AFTER |  | 
-| UTILIZATION_START |  | 
-| UTILIZATION_STEP |  | 
-| UTILIZATION_TOP |  | 
+| GENERATOR | Which generator to use. For now, Gen4MAST only implements *UTILIZATION_SERIES*, that generates systems in a series of increasing utilizations | 
+| CLEAN_AFTER | **FOR UTILIZATION_SERIES GENERATOR ONLY**. Boolean that indicates if intermediate files should be deleted once Gen4MAST finishes its execution| 
+| UTILIZATION_START | **FOR UTILIZATION_SERIES GENERATOR ONLY**. Initial system utilization in the series (percentage) | 
+| UTILIZATION_STEP | **FOR UTILIZATION_SERIES GENERATOR ONLY**. Step in the series of utilizations (percentage) | 
+| UTILIZATION_TOP | **FOR UTILIZATION_SERIES GENERATOR ONLY**. Final system utilization in the series (percentage) | 
 ----------------------
 
 ## Results Manager options
 
 | Property | Description |
 | ---------| ----------- |
-| STORER | |
-| RESULTS_LOCATION | |
+| STORER | Which results manager to use. For now Gen4MAST only implements *SQLITE_MAST*, which stores the results in an SQLite database. If *CLUSTER_TORQUE* dispatcher is used, a new database is created for each cluster job dispatched.|
+| RESULTS_LOCATION | Path of the results database |
 ----------------------
