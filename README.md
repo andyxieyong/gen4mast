@@ -121,5 +121,5 @@ This properties specify the characteristics of the systems to be generated.
 | Property | Description |
 | ---------| ----------- |
 | STORER | Which results manager to use. For now Gen4MAST only implements *SQLITE_MAST*, which stores the results in an SQLite database. If *CLUSTER_TORQUE* dispatcher is used, a new database is created for each cluster job dispatched.|
-| RESULTS_LOCATION | Path of the results database |
+| RESULTS_LOCATION | **FOR SQLITE_MAST RESULTS MANAGER ONLY**. Path of the results database |
 ----------------------
