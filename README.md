@@ -94,3 +94,14 @@ All properties must be specified in the file, no defualts values are assumed.
 | CLUSTER_USER_EMAIL |  |  
 | NUMBER_OF_CLUSTER_JOBS |  | 
 -----------------------------
+
+## Utilization Series Generator options
+
+| Property | Description |
+| ---------| ----------- |
+| GENERATOR |  | 
+| CLEAN_AFTER |  | 
+| UTILIZATION_START |  | 
+| UTILIZATION_STEP |  | 
+| UTILIZATION_TOP |  | 
+----------------------
