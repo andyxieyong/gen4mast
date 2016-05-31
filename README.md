@@ -89,9 +89,7 @@ All properties must be specified in the file, no defualts values are assumed.
 | Property | Description |
 | ---------| ----------- |
 | DISPATCHER |  | 
------------------
 | THREAD_POOL_SIZE |  |
------------------------
 | GENERATOR_JAR_PATH |  | 
 | CLUSTER_USER_EMAIL |  |  
 | NUMBER_OF_CLUSTER_JOBS |  | 
