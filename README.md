@@ -105,3 +105,11 @@ All properties must be specified in the file, no defualts values are assumed.
 | UTILIZATION_STEP |  | 
 | UTILIZATION_TOP |  | 
 ----------------------
+
+## Results Manager options
+
+| Property | Description |
+| ---------| ----------- |
+| STORER | |
+| RESULTS_LOCATION | |
+----------------------
