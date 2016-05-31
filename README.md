@@ -37,7 +37,11 @@ Additionally, the results database can be accessed using special purpose program
 
 # Properties File
 
-All properties must be specified in the file, no defualts values are assumed.
+The properties file contains all the configuration information of Gen4MAST. It specifies among others the characteristics of the system to be generated, and which techniques to apply on them, from the techniques available in MAST (e.g. schedulability analysis, prioritity assignment, etc.).
+
+
+
+All properties must be specified in the file, no defaults values are assumed.
 
 ## System characteristics section
 
