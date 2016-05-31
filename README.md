@@ -83,3 +83,16 @@ All properties must be specified in the file, no defualts values are assumed.
 | JITTER_AVOIDANCE |  | 
 | ANALYSIS_TIMEOUT |  | 
 -----------------------------
+
+## Dispatcher options
+
+| Property | Description |
+| ---------| ----------- |
+| DISPATCHER |  | 
+-----------------
+| THREAD_POOL_SIZE |  |
+-----------------------
+| GENERATOR_JAR_PATH |  | 
+| CLUSTER_USER_EMAIL |  |  
+| NUMBER_OF_CLUSTER_JOBS |  | 
+-----------------------------
