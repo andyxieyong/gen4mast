@@ -43,8 +43,8 @@ All properties must be specified in the file, no defualts values are assumed.
 
 | Property | Description |
 | ---------| ----------- |
-| SEED     | Seed numbers |
-| N_PROCESSORS | Number of processors |
+| SEED     |  |
+| N_PROCESSORS | |
 | N_FLOWS |  | 
 | N_TASKS |  | 
 | RANDOM_LENGTH |  | 
@@ -60,3 +60,26 @@ All properties must be specified in the file, no defualts values are assumed.
 | UTILIZATION_WCET_METHOD |  | 
 | UTILIZATION_BALANCING |  | 
 -------------------------------------
+
+## MAST Tool configuration
+
+| Property | Description |
+| ---------| ----------- |
+| NAME |  | 
+| WORK_PATH |  | 
+| MAST_PATH |  | 
+| ANALYSIS_TOOL |  | 
+| ASSIGNMENT_TOOL |  | 
+| SYNC |  | 
+| HOSPA_INIT |  | 
+| HOSPA_KA |  | 
+| HOSPA_KR |  | 
+| HOSPA_ITERATIONS |  | 
+| HOSPA_OVERITERATIONS |  | 
+| ANALYSIS_STOP_FACTOR |  | 
+| LC_EDF_GSD |  | 
+| LC_EDF_DS_FACTOR |  | 
+| CALCULATE_SLACK |  | 
+| JITTER_AVOIDANCE |  | 
+| ANALYSIS_TIMEOUT |  | 
+-----------------------------
