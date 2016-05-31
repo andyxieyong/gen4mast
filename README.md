@@ -61,7 +61,7 @@ This properties specify the characteristics of the systems to be generated.
 | PERIOD_DISTRIBUTION | Probability distribution used to select the end-to-end flows periods: *UNIFORM* uniform distribution, *LOG-UNIFORM* logarithmic-uniform distribution | 
 | PERIOD_BASE | Minimum value that the periods can have | 
 | PERIOD_RATIO |  Is used to indicate the maximum possible value of the periods, calculated as **PERIOD_BASE** * **PERIOD_RATIO**| 
-| DEADLINE |  | 
+| DEADLINE | Indicates which end-to-end deadlines to assign to the end-to-end flows. If an integer is provided, the deadlines are calculated as **DEADLINE***period. Additionaly, predefined values in the segment [T, N*T] are established (T and N are respectively the period and number of steps of the end-to-end flow). the predefined values are: *T, NT* for the limits of the range, *T1,T2* for the first and second thirds of the segment, and *Q1,Q2,Q3* for the first, second and third quarters of the segment | 
 | TASK_LOCALIZATION |  | 
 | UTILIZATION |  | 
 | UTILIZATION_BCET_FACTOR |  | 
