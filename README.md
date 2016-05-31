@@ -55,12 +55,12 @@ This properties specify the characteristics of the systems to be generated.
 | N_PROCESSORS | Number of processing resources in the system |
 | N_FLOWS | Number of end-to-end flows in the system | 
 | N_TASKS | Maximum number of steps in the end-to-end flows | 
-| RANDOM_LENGTH | Boolean. *False* indicates that every end-to-end flow has **N_TASKS** steps. *True* indicates that each end-to-end flow will have a random number of steps in the range [2,**N_STEPS++] | 
-| SINGLE_FLOWS |  | 
-| SCHED_POLICY |  | 
-| PERIOD_DISTRIBUTION |  | 
-| PERIOD_BASE |  | 
-| PERIOD_RATIO |  | 
+| RANDOM_LENGTH | Boolean. *False* indicates that every end-to-end flow has **N_TASKS** steps. *True* indicates that each end-to-end flow will have a random number of steps in the range [2,**N_STEPS**] | 
+| SINGLE_FLOWS | Indicates the percentage of end-to-end flows that will have only one step (independent tasks) | 
+| SCHED_POLICY | Scheduling Policy used: *FP* for fixed priorities scheduling, or *EDF* for earliest deadline first scheduling  | 
+| PERIOD_DISTRIBUTION | Probability distribution used to select the end-to-end flows periods: *UNIFORM* uniform distribution, *LOG-UNIFORM* logarithmic-uniform distribution | 
+| PERIOD_BASE | Minimum value that the periods can have | 
+| PERIOD_RATIO |  Is used to indicate the maximum possible value of the periods, calculated as **PERIOD_BASE** * **PERIOD_RATIO**| 
 | DEADLINE |  | 
 | TASK_LOCALIZATION |  | 
 | UTILIZATION |  | 
