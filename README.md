@@ -39,7 +39,9 @@ Additionally, the results database can be accessed using special purpose program
 
 The properties file contains all the configuration information of Gen4MAST. It specifies among others the characteristics of the system to be generated, and which techniques to apply on them, from the techniques available in MAST (e.g. schedulability analysis, prioritity assignment, etc.).
 
+The file follows the standard Java properties file [format](https://docs.oracle.com/javase/7/docs/api/java/util/Properties.html), in its plain text version (non XML). 
 
+Each key in the properties file can be assigned several values separated by comma. For example, parameter **N_FLOWS**=4,6 will generate two kinds of systems: systems with 4 end-to-end flows, and systems with 6 end-to-end flows.
 
 All properties must be specified in the file, no defaults values are assumed.
 
