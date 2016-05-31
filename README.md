@@ -47,13 +47,15 @@ All properties must be specified in the file, no defaults values are assumed.
 
 ## System characteristics section
 
+This properties specify the characteristics of the systems to be generated.
+
 | Property | Description |
 | ---------| ----------- |
-| SEED     |  |
-| N_PROCESSORS | |
-| N_FLOWS |  | 
-| N_TASKS |  | 
-| RANDOM_LENGTH |  | 
+| SEED     | Seed to initialize the random number generator. Different  seeds can be given to generate several systems with the same characteristics, but created with different seeds. Optionally, a range of seeds can be provided: SEED=1-5 is equivalent to SEED=1,2,3,4,5|
+| N_PROCESSORS | Number of processing resources in the system |
+| N_FLOWS | Number of end-to-end flows in the system | 
+| N_TASKS | Maximum number of steps in the end-to-end flows | 
+| RANDOM_LENGTH | Boolean. *False* indicates that every end-to-end flow has **N_TASKS** steps. *True* indicates that each end-to-end flow will have a random number of steps in the range [2,**N_STEPS++] | 
 | SINGLE_FLOWS |  | 
 | SCHED_POLICY |  | 
 | PERIOD_DISTRIBUTION |  | 
