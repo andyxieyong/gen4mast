@@ -7,7 +7,7 @@ Gen4MAST is provided as open source. An executable pre-compiled jar file is also
 
 This is a quick tutorial of Gen4MAST. This tutorial uses the jar release of Gen4MAST that can be downloaded from [here](https://github.com/rivasjm/gen4mast/raw/master/releases/gen4mast.jar/). 
 
-The MAST tool in its binaty form must be downloaded before executing Gen4MAST. MAST can be downloaded from [here](http://mast.unican.es). Gen4MAST requires MAST version 1.4 or above. 
+Gen4MAST requires the MAST tool in its binary form must be downloaded before executing Gen4MAST. MAST can be downloaded from [here](http://mast.unican.es). Gen4MAST requires MAST version 1.4 or above. 
 
 To execute Gen4MAST, a properties file must be created. This file specifies the characteristics of the systems to be generated, and which MAST techniques to apply on them, such as schedulability analyses or priority optimizations. The properties file used in this tutorial can be downloaded [here] (https://github.com/rivasjm/gen4mast/raw/master/releases/gen4mast.properties). 
 
@@ -75,10 +75,10 @@ This properties specify the characteristics of the systems to be generated.
 
 | Property | Description |
 | ---------| ----------- |
-| NAME |  | 
-| WORK_PATH |  | 
-| MAST_PATH |  | 
-| ANALYSIS_TOOL |  | 
+| NAME | Name of this study. This value is used to identify this execution in the results database | 
+| WORK_PATH | Working path in which all intermediate files will be generated | 
+| MAST_PATH | Path of the MAST tool main executable (mast_analysis.exe in windows). Version 1.4 and above of MAST is required | 
+| ANALYSIS_TOOL | Which schedulability analysis tool to apply. A description of the available techniques can be found [here](http://mast.unican.es/mast_analysis_techniques.pdf). Available options in Gen4MAST: *HOLISTIC* (Holistic Analysis), *OFFSET* (Offset Based Approximate Analysis), *OFFSET_SLANTED* (Offset Based Slanted Analysis), *OFFSET_OPT* (Offset Based Approximate with Precedence Relations Analysis), *BRUTE_FORCE* (Offset Based Brute Force Analysis)| 
 | ASSIGNMENT_TOOL |  | 
 | SYNC |  | 
 | HOSPA_INIT |  | 
