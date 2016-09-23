@@ -7,11 +7,11 @@ import es.unican.istr.gen4mast.tool.MastTool;
 import es.unican.istr.rtgen.Dispatcher;
 import es.unican.istr.rtgen.dispatchers.config.DispatcherConfig;
 import es.unican.istr.rtgen.Storer;
+import es.unican.istr.rtgen.generators.UtilizationEvaluationEngine;
 import es.unican.istr.rtgen.storers.config.StorerConfig;
 import es.unican.istr.rtgen.generators.config.GeneratorConfig;
 import es.unican.istr.rtgen.generators.config.UtilizationGeneratorConfig;
 import es.unican.istr.rtgen.dispatchers.LocalDispatcher;
-import es.unican.istr.rtgen.generators.UtilizationGenerator;
 
 /**
  * Created by Juan M Rivas (jmrivasconcepcion@gmail.com) on 17/01/2016.
@@ -23,11 +23,11 @@ public class LocalDispatcherTest {
         DispatcherConfig dispatcherConfig = new MastLocalDispatcherConfig("gen4mast.properties");
 
         // Create execution dispatcher (Local)
-        Dispatcher<UtilizationGenerator, MastSystem, MastTool> dispatcher = new LocalDispatcher<>(dispatcherConfig);
+        Dispatcher<UtilizationEvaluationEngine, MastSystem, MastTool> dispatcher = new LocalDispatcher<>(dispatcherConfig);
 
-        // Set Series Generator (UtilizationSeries)
+        // Set Series EvaluationEngine (UtilizationSeries)
         GeneratorConfig seriesConfig = new UtilizationGeneratorConfig();
-        dispatcher.setSeriesGenerator(UtilizationGenerator.class, seriesConfig);
+        dispatcher.setSeriesGenerator(UtilizationEvaluationEngine.class, seriesConfig);
 
         // Set Results Handler
         StorerConfig resultsConfig = new StorerConfig();

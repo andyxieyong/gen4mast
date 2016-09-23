@@ -7,17 +7,14 @@ import es.unican.istr.gen4mast.storers.SQLiteMastUtilizationGeneratorStorer;
 import es.unican.istr.gen4mast.system.MastSystem;
 import es.unican.istr.gen4mast.tool.MastTool;
 import es.unican.istr.rtgen.Dispatcher;
-import es.unican.istr.rtgen.Generator;
 import es.unican.istr.rtgen.Storer;
 import es.unican.istr.rtgen.dispatchers.ClusterTorqueDispatcher;
 import es.unican.istr.rtgen.dispatchers.LocalDispatcher;
 import es.unican.istr.rtgen.dispatchers.config.DispatcherConfig;
-import es.unican.istr.rtgen.generators.UtilizationGenerator;
+import es.unican.istr.rtgen.generators.UtilizationEvaluationEngine;
 import es.unican.istr.rtgen.generators.config.GeneratorConfig;
 import es.unican.istr.rtgen.generators.config.UtilizationGeneratorConfig;
 import es.unican.istr.rtgen.storers.config.StorerConfig;
-import es.unican.istr.rtgen.system.LinearSystem;
-import es.unican.istr.rtgen.tool.Tool;
 
 /**
  * Created by Juan M Rivas (jmrivasconcepcion@gmail.com) on 08/10/2015.
@@ -58,7 +55,7 @@ public class Main {
 
 
         //////////////////////////////
-        // Generator Initialization //
+        // EvaluationEngine Initialization //
         //////////////////////////////
 
         GeneratorConfig generatorConfig = null;
@@ -87,7 +84,7 @@ public class Main {
         }
         dispatcher.setLinearSystem(MastSystem.class);
         dispatcher.setRTTool(MastTool.class);
-        dispatcher.setSeriesGenerator(UtilizationGenerator.class, generatorConfig);
+        dispatcher.setSeriesGenerator(UtilizationEvaluationEngine.class, generatorConfig);
         dispatcher.setStorer(storer);
 
 

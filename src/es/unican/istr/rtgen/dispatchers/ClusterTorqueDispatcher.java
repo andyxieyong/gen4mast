@@ -1,7 +1,7 @@
 package es.unican.istr.rtgen.dispatchers;
 
 import es.unican.istr.rtgen.Dispatcher;
-import es.unican.istr.rtgen.Generator;
+import es.unican.istr.rtgen.EvaluationEngine;
 import es.unican.istr.rtgen.dispatchers.config.ClusterTorqueDispatcherConfig;
 import es.unican.istr.rtgen.dispatchers.config.DispatcherConfig;
 import es.unican.istr.rtgen.system.LinearSystem;
@@ -24,7 +24,7 @@ import java.util.List;
 /**
  * Created by Administrador on 19/01/2016.
  */
-public class ClusterTorqueDispatcher<G extends Generator, LS extends LinearSystem, RTT extends Tool>
+public class ClusterTorqueDispatcher<G extends EvaluationEngine, LS extends LinearSystem, RTT extends Tool>
         extends Dispatcher<G, LS, RTT> {
 
     //////////////////
@@ -112,7 +112,7 @@ public class ClusterTorqueDispatcher<G extends Generator, LS extends LinearSyste
                     ToolConfig t = it.next();
 
                     /////////////////////////////////
-                    // Prepare Generator Execution //
+                    // Prepare EvaluationEngine Execution //
                     /////////////////////////////////
 
                     List<String> argsL = new ArrayList<>();
@@ -129,7 +129,7 @@ public class ClusterTorqueDispatcher<G extends Generator, LS extends LinearSyste
                     // Tool implementation class
                     argsL.add(getTRTTool().getName());
 
-                    // Generator config class
+                    // EvaluationEngine config class
                     argsL.add(getSeriesConfig().getClass().getName());
 
                     // Storer config class

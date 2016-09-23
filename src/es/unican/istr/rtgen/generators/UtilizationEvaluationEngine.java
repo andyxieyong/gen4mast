@@ -1,6 +1,6 @@
 package es.unican.istr.rtgen.generators;
 
-import es.unican.istr.rtgen.Generator;
+import es.unican.istr.rtgen.EvaluationEngine;
 import es.unican.istr.rtgen.generators.config.GeneratorConfig;
 import es.unican.istr.rtgen.generators.config.UtilizationGeneratorConfig;
 import es.unican.istr.rtgen.Storer;
@@ -10,7 +10,6 @@ import es.unican.istr.rtgen.system.LinearSystem;
 import es.unican.istr.rtgen.system.config.SystemConfig;
 import es.unican.istr.rtgen.tool.Tool;
 import es.unican.istr.rtgen.tool.config.ToolConfig;
-import es.unican.istr.rtgen.utils.Utils;
 import org.apache.commons.io.FilenameUtils;
 
 import java.lang.reflect.Constructor;
@@ -23,8 +22,8 @@ import java.util.UUID;
 /**
  * Created by juanm on 17/01/2016.
  */
-public class UtilizationGenerator<LS extends LinearSystem, RTT extends Tool>
-        extends Generator<LS, RTT> {
+public class UtilizationEvaluationEngine<LS extends LinearSystem, RTT extends Tool>
+        extends EvaluationEngine<LS, RTT> {
 
     ///////////////////////////
     // Implementation Fields //
@@ -37,14 +36,14 @@ public class UtilizationGenerator<LS extends LinearSystem, RTT extends Tool>
     // Constructors //
     //////////////////
 
-    public UtilizationGenerator(SystemConfig sysConfig, ToolConfig toolConfig,
-                                Storer storer, GeneratorConfig seriesConfig){
+    public UtilizationEvaluationEngine(SystemConfig sysConfig, ToolConfig toolConfig,
+                                       Storer storer, GeneratorConfig seriesConfig){
         super(sysConfig, toolConfig, storer, seriesConfig);
     }
 
 
     //////////////////////////////
-    // Series Generator Methods //
+    // Series EvaluationEngine Methods //
     //////////////////////////////
 
     @Override
@@ -56,7 +55,7 @@ public class UtilizationGenerator<LS extends LinearSystem, RTT extends Tool>
             InetAddress addr;
             addr = InetAddress.getLocalHost();
             hostname = addr.getHostName();
-            System.out.printf("Generator started execution in %s\n", hostname);
+            System.out.printf("EvaluationEngine started execution in %s\n", hostname);
         }
         catch (UnknownHostException ex)
         {
@@ -157,7 +156,7 @@ public class UtilizationGenerator<LS extends LinearSystem, RTT extends Tool>
     /////////////////
 
     /*
-    This method launches UtilizationGenerator.run() from the command line
+    This method launches UtilizationEvaluationEngine.run() from the command line
     This procedure is used by the Cluster-Torque dispatcher to launch the generator
     Parameters are given in args
      */
@@ -301,10 +300,10 @@ public class UtilizationGenerator<LS extends LinearSystem, RTT extends Tool>
 
 
         /////////////////////////////////////////////////////
-        // Prepare and launch an instance of the Generator //
+        // Prepare and launch an instance of the EvaluationEngine //
         /////////////////////////////////////////////////////
 
-        UtilizationGenerator gen = new UtilizationGenerator(systemConfig, toolConfig, storer, generatorConfig);
+        UtilizationEvaluationEngine gen = new UtilizationEvaluationEngine(systemConfig, toolConfig, storer, generatorConfig);
         gen.setRTTool(TTool);
         gen.setLinearSystem(TLinearSystem);
         gen.run();

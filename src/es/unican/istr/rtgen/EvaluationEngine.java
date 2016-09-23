@@ -9,10 +9,10 @@ import es.unican.istr.rtgen.tool.config.ToolConfig;
 /**
  * Created by juanm on 13/01/2016.
  */
-public abstract class Generator<LS extends LinearSystem, RTT extends Tool> implements Runnable  {
+public abstract class EvaluationEngine<LS extends LinearSystem, RTT extends Tool> implements Runnable  {
 
     /////////////////////////////
-    // Series Generator Fields //
+    // Series EvaluationEngine Fields //
     /////////////////////////////
 
     private GeneratorConfig genConfig;
@@ -39,8 +39,8 @@ public abstract class Generator<LS extends LinearSystem, RTT extends Tool> imple
     // Constructors //
     //////////////////
 
-    public Generator(SystemConfig sysConfig, ToolConfig toolConfig,
-                     Storer storer, GeneratorConfig genConfig){
+    public EvaluationEngine(SystemConfig sysConfig, ToolConfig toolConfig,
+                            Storer storer, GeneratorConfig genConfig){
         this.sysConfig = sysConfig;
         this.toolConfig = toolConfig;
         this.storer = storer;
@@ -49,7 +49,7 @@ public abstract class Generator<LS extends LinearSystem, RTT extends Tool> imple
 
 
     //////////////////////////////
-    // Series Generator Methods //
+    // Series EvaluationEngine Methods //
     //////////////////////////////
 
     //public abstract void run(); // Defined in Interface Runnable

@@ -7,9 +7,9 @@ import es.unican.istr.gen4mast.tool.config.AnalysisOptions;
 import es.unican.istr.gen4mast.tool.config.AssignmentOptions;
 import es.unican.istr.gen4mast.tool.config.HOSPAConfig;
 import es.unican.istr.gen4mast.tool.config.MastToolConfig;
+import es.unican.istr.rtgen.generators.UtilizationEvaluationEngine;
 import es.unican.istr.rtgen.generators.config.GeneratorConfig;
 import es.unican.istr.rtgen.generators.config.UtilizationGeneratorConfig;
-import es.unican.istr.rtgen.generators.UtilizationGenerator;
 import es.unican.istr.rtgen.storers.config.StorerConfig;
 import es.unican.istr.rtgen.system.config.SystemConfig;
 import es.unican.istr.rtgen.system.config.deadline.DeadlineConfig;
@@ -62,7 +62,7 @@ public class UtilizationSeriesTest {
 
 
         // Instantiate and configure Utilization Series
-        UtilizationGenerator<MastSystem, MastTool> series = new UtilizationGenerator<>(
+        UtilizationEvaluationEngine<MastSystem, MastTool> series = new UtilizationEvaluationEngine<>(
                 s, m, res, config);
         series.setLinearSystem(MastSystem.class);
         series.setRTTool(MastTool.class);

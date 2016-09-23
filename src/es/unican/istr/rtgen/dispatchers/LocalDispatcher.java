@@ -1,10 +1,10 @@
 package es.unican.istr.rtgen.dispatchers;
 
 import es.unican.istr.rtgen.Dispatcher;
+import es.unican.istr.rtgen.EvaluationEngine;
 import es.unican.istr.rtgen.dispatchers.config.DispatcherConfig;
 import es.unican.istr.rtgen.dispatchers.config.LocalDispatcherConfig;
 import es.unican.istr.rtgen.generators.config.GeneratorConfig;
-import es.unican.istr.rtgen.Generator;
 import es.unican.istr.rtgen.Storer;
 import es.unican.istr.rtgen.system.LinearSystem;
 import es.unican.istr.rtgen.system.config.SystemConfig;
@@ -21,7 +21,7 @@ import java.util.concurrent.Executors;
 /**
  * Created by juanm on 17/01/2016.
  */
-public class LocalDispatcher<G extends Generator, LS extends LinearSystem, RTT extends Tool>
+public class LocalDispatcher<G extends EvaluationEngine, LS extends LinearSystem, RTT extends Tool>
         extends Dispatcher<G, LS, RTT> {
 
     //////////////////
@@ -64,11 +64,11 @@ public class LocalDispatcher<G extends Generator, LS extends LinearSystem, RTT e
             System.out.printf("Study composed of %d jobs: \n", systemConfigs.size()*toolConfigs.size());
             System.out.println("Press any key to launch the study");
             System.in.read();
-            // For each combination in the scope, launch a Series Generator
+            // For each combination in the scope, launch a Series EvaluationEngine
             for (SystemConfig s : systemConfigs) {
                 for (ToolConfig r : toolConfigs) {
 
-                    // Create and configure a Series Generator
+                    // Create and configure a Series EvaluationEngine
                     Constructor<G> seriesConstructor = getTGenerator().getDeclaredConstructor(
                             SystemConfig.class, ToolConfig.class,
                             Storer.class, GeneratorConfig.class);

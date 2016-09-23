@@ -8,7 +8,7 @@ import es.unican.istr.rtgen.tool.Tool;
 /**
  * Created by juanm on 13/01/2016.
  */
-public abstract class Dispatcher<G extends Generator, LS extends LinearSystem, RTT extends Tool> {
+public abstract class Dispatcher<G extends EvaluationEngine, LS extends LinearSystem, RTT extends Tool> {
 
     /////////////////////////////////
     // Execution Dispatcher Fields //
@@ -18,7 +18,7 @@ public abstract class Dispatcher<G extends Generator, LS extends LinearSystem, R
 
 
     /////////////////////////////
-    // Series Generator Fields //
+    // Series EvaluationEngine Fields //
     /////////////////////////////
 
     private Class<G> TGenerator;
