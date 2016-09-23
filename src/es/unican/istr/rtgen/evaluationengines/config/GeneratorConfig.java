@@ -1,4 +1,4 @@
-package es.unican.istr.rtgen.generators.config;
+package es.unican.istr.rtgen.evaluationengines.config;
 
 import es.unican.istr.rtgen.config.Config;
 

@@ -1,6 +1,6 @@
 package es.unican.istr.rtgen;
 
-import es.unican.istr.rtgen.storers.config.StorerConfig;
+import es.unican.istr.rtgen.resultsmanagers.config.StorerConfig;
 import es.unican.istr.rtgen.system.LinearSystem;
 
 /**

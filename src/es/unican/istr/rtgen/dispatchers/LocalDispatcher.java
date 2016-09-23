@@ -4,7 +4,7 @@ import es.unican.istr.rtgen.Dispatcher;
 import es.unican.istr.rtgen.EvaluationEngine;
 import es.unican.istr.rtgen.dispatchers.config.DispatcherConfig;
 import es.unican.istr.rtgen.dispatchers.config.LocalDispatcherConfig;
-import es.unican.istr.rtgen.generators.config.GeneratorConfig;
+import es.unican.istr.rtgen.evaluationengines.config.GeneratorConfig;
 import es.unican.istr.rtgen.ResultsManager;
 import es.unican.istr.rtgen.system.LinearSystem;
 import es.unican.istr.rtgen.system.config.SystemConfig;

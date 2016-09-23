@@ -1,4 +1,4 @@
-package es.unican.istr.rtgen.generators.config;
+package es.unican.istr.rtgen.evaluationengines.config;
 
 /**
  * Created by Juan M Rivas (jmrivasconcepcion@gmail.com) on 17/01/2016.

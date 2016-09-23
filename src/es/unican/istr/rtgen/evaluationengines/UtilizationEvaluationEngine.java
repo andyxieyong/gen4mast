@@ -1,11 +1,11 @@
-package es.unican.istr.rtgen.generators;
+package es.unican.istr.rtgen.evaluationengines;
 
 import es.unican.istr.rtgen.EvaluationEngine;
 import es.unican.istr.rtgen.ResultsManager;
-import es.unican.istr.rtgen.generators.config.GeneratorConfig;
-import es.unican.istr.rtgen.generators.config.UtilizationGeneratorConfig;
-import es.unican.istr.rtgen.storers.UtilizationGeneratorResultsManager;
-import es.unican.istr.rtgen.storers.config.StorerConfig;
+import es.unican.istr.rtgen.evaluationengines.config.GeneratorConfig;
+import es.unican.istr.rtgen.evaluationengines.config.UtilizationGeneratorConfig;
+import es.unican.istr.rtgen.resultsmanagers.UtilizationGeneratorResultsManager;
+import es.unican.istr.rtgen.resultsmanagers.config.StorerConfig;
 import es.unican.istr.rtgen.system.LinearSystem;
 import es.unican.istr.rtgen.system.config.SystemConfig;
 import es.unican.istr.rtgen.tool.Tool;

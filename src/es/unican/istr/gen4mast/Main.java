@@ -11,10 +11,10 @@ import es.unican.istr.rtgen.ResultsManager;
 import es.unican.istr.rtgen.dispatchers.ClusterTorqueDispatcher;
 import es.unican.istr.rtgen.dispatchers.LocalDispatcher;
 import es.unican.istr.rtgen.dispatchers.config.DispatcherConfig;
-import es.unican.istr.rtgen.generators.UtilizationEvaluationEngine;
-import es.unican.istr.rtgen.generators.config.GeneratorConfig;
-import es.unican.istr.rtgen.generators.config.UtilizationGeneratorConfig;
-import es.unican.istr.rtgen.storers.config.StorerConfig;
+import es.unican.istr.rtgen.evaluationengines.UtilizationEvaluationEngine;
+import es.unican.istr.rtgen.evaluationengines.config.GeneratorConfig;
+import es.unican.istr.rtgen.evaluationengines.config.UtilizationGeneratorConfig;
+import es.unican.istr.rtgen.resultsmanagers.config.StorerConfig;
 
 /**
  * Created by Juan M Rivas (jmrivasconcepcion@gmail.com) on 08/10/2015.

@@ -1,7 +1,7 @@
 package es.unican.istr.tests;
 
 import es.unican.istr.gen4mast.storers.SQLiteMastUtilizationGeneratorResultsManager;
-import es.unican.istr.rtgen.storers.config.StorerConfig;
+import es.unican.istr.rtgen.resultsmanagers.config.StorerConfig;
 
 /**
  * Created by Juan M Rivas (jmrivasconcepcion@gmail.com) on 17/01/2016.

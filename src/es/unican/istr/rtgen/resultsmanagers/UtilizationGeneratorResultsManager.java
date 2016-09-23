@@ -1,7 +1,7 @@
-package es.unican.istr.rtgen.storers;
+package es.unican.istr.rtgen.resultsmanagers;
 
 import es.unican.istr.rtgen.ResultsManager;
-import es.unican.istr.rtgen.storers.config.StorerConfig;
+import es.unican.istr.rtgen.resultsmanagers.config.StorerConfig;
 import es.unican.istr.rtgen.system.config.SystemConfig;
 import es.unican.istr.rtgen.tool.config.ToolConfig;
 

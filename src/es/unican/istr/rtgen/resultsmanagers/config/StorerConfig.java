@@ -1,4 +1,4 @@
-package es.unican.istr.rtgen.storers.config;
+package es.unican.istr.rtgen.resultsmanagers.config;
 
 import es.unican.istr.rtgen.config.Config;
 

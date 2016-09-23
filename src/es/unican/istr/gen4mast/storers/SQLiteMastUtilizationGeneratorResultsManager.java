@@ -2,8 +2,8 @@ package es.unican.istr.gen4mast.storers;
 
 import es.unican.istr.gen4mast.tool.config.MastToolConfig;
 import es.unican.istr.gen4mast.tool.config.MastToolConfigurableOptions;
-import es.unican.istr.rtgen.storers.UtilizationGeneratorResultsManager;
-import es.unican.istr.rtgen.storers.config.StorerConfig;
+import es.unican.istr.rtgen.resultsmanagers.UtilizationGeneratorResultsManager;
+import es.unican.istr.rtgen.resultsmanagers.config.StorerConfig;
 import es.unican.istr.rtgen.system.LinearSystem;
 import es.unican.istr.rtgen.system.config.LinearSystemConfigurableOptions;
 import es.unican.istr.rtgen.system.config.SystemConfig;
