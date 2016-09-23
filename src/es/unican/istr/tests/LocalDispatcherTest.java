@@ -1,12 +1,12 @@
 package es.unican.istr.tests;
 
 import es.unican.istr.gen4mast.dispatchers.config.MastLocalDispatcherConfig;
-import es.unican.istr.gen4mast.storers.SQLiteMastUtilizationGeneratorStorer;
+import es.unican.istr.gen4mast.storers.SQLiteMastUtilizationGeneratorResultsManager;
 import es.unican.istr.gen4mast.system.MastSystem;
 import es.unican.istr.gen4mast.tool.MastTool;
 import es.unican.istr.rtgen.Dispatcher;
+import es.unican.istr.rtgen.ResultsManager;
 import es.unican.istr.rtgen.dispatchers.config.DispatcherConfig;
-import es.unican.istr.rtgen.Storer;
 import es.unican.istr.rtgen.generators.UtilizationEvaluationEngine;
 import es.unican.istr.rtgen.storers.config.StorerConfig;
 import es.unican.istr.rtgen.generators.config.GeneratorConfig;
@@ -31,8 +31,8 @@ public class LocalDispatcherTest {
 
         // Set Results Handler
         StorerConfig resultsConfig = new StorerConfig();
-        Storer results = new SQLiteMastUtilizationGeneratorStorer(resultsConfig);
-        dispatcher.setStorer(results);
+        ResultsManager results = new SQLiteMastUtilizationGeneratorResultsManager(resultsConfig);
+        dispatcher.setResultsManager(results);
 
         // Set system and tool models
         dispatcher.setLinearSystem(MastSystem.class);

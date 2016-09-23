@@ -1,6 +1,6 @@
 package es.unican.istr.rtgen.storers;
 
-import es.unican.istr.rtgen.Storer;
+import es.unican.istr.rtgen.ResultsManager;
 import es.unican.istr.rtgen.storers.config.StorerConfig;
 import es.unican.istr.rtgen.system.config.SystemConfig;
 import es.unican.istr.rtgen.tool.config.ToolConfig;
@@ -8,13 +8,13 @@ import es.unican.istr.rtgen.tool.config.ToolConfig;
 /**
  * Created by Juan M Rivas (jmrivasconcepcion@gmail.com) on 17/01/2016.
  */
-public abstract class UtilizationGeneratorStorer extends Storer {
+public abstract class UtilizationGeneratorResultsManager extends ResultsManager {
 
     //////////////////
     // Constructors //
     //////////////////
 
-    public UtilizationGeneratorStorer(StorerConfig config){
+    public UtilizationGeneratorResultsManager(StorerConfig config){
         super(config);
     }
 

@@ -6,10 +6,10 @@ import es.unican.istr.rtgen.system.LinearSystem;
 /**
  * Created by juanm on 13/01/2016.
  */
-public abstract class Storer {
+public abstract class ResultsManager {
 
     ///////////////////
-    // Storer Fields //
+    // ResultsManager Fields //
     ///////////////////
 
     private StorerConfig config;
@@ -19,7 +19,7 @@ public abstract class Storer {
     // Constructors //
     //////////////////
 
-    public Storer(StorerConfig config){
+    public ResultsManager(StorerConfig config){
         this.config = config;
     }
 

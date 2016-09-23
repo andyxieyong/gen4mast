@@ -29,7 +29,7 @@ public abstract class Dispatcher<G extends EvaluationEngine, LS extends LinearSy
     // Results Handler Fields //
     ////////////////////////////
 
-    private Storer storer;
+    private ResultsManager resultsManager;
 
 
     ///////////////////////////////////
@@ -56,7 +56,7 @@ public abstract class Dispatcher<G extends EvaluationEngine, LS extends LinearSy
     public abstract void launch();
 
     public Boolean isConfigurationOK(){
-        if (storer == null || TLinearSystem == null || TRTTool == null || dispatcherConfig == null ||
+        if (resultsManager == null || TLinearSystem == null || TRTTool == null || dispatcherConfig == null ||
                 TGenerator == null || seriesConfig == null){
             return Boolean.FALSE;
         }
@@ -72,8 +72,8 @@ public abstract class Dispatcher<G extends EvaluationEngine, LS extends LinearSy
         this.seriesConfig = seriesConfig;
     }
 
-    public void setStorer(Storer storer){
-        this.storer = storer;
+    public void setResultsManager(ResultsManager resultsManager){
+        this.resultsManager = resultsManager;
     }
 
     public void setLinearSystem(Class<LS> TLinearSystem){
@@ -101,8 +101,8 @@ public abstract class Dispatcher<G extends EvaluationEngine, LS extends LinearSy
         return seriesConfig;
     }
 
-    public Storer getStorer() {
-        return storer;
+    public ResultsManager getResultsManager() {
+        return resultsManager;
     }
 
     public Class<LS> getTLinearSystem() {

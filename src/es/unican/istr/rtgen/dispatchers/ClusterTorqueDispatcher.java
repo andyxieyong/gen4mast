@@ -132,11 +132,11 @@ public class ClusterTorqueDispatcher<G extends EvaluationEngine, LS extends Line
                     // EvaluationEngine config class
                     argsL.add(getSeriesConfig().getClass().getName());
 
-                    // Storer config class
-                    argsL.add(getStorer().getConfig().getClass().getName());
+                    // ResultsManager config class
+                    argsL.add(getResultsManager().getConfig().getClass().getName());
 
-                    // Storer class
-                    argsL.add(getStorer().getClass().getName());
+                    // ResultsManager class
+                    argsL.add(getResultsManager().getClass().getName());
 
                     // Systemconfig class
                     argsL.add(s.getClass().getName());

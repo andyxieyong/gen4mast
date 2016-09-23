@@ -1,10 +1,10 @@
 package es.unican.istr.rtgen.generators;
 
 import es.unican.istr.rtgen.EvaluationEngine;
+import es.unican.istr.rtgen.ResultsManager;
 import es.unican.istr.rtgen.generators.config.GeneratorConfig;
 import es.unican.istr.rtgen.generators.config.UtilizationGeneratorConfig;
-import es.unican.istr.rtgen.Storer;
-import es.unican.istr.rtgen.storers.UtilizationGeneratorStorer;
+import es.unican.istr.rtgen.storers.UtilizationGeneratorResultsManager;
 import es.unican.istr.rtgen.storers.config.StorerConfig;
 import es.unican.istr.rtgen.system.LinearSystem;
 import es.unican.istr.rtgen.system.config.SystemConfig;
@@ -37,8 +37,8 @@ public class UtilizationEvaluationEngine<LS extends LinearSystem, RTT extends To
     //////////////////
 
     public UtilizationEvaluationEngine(SystemConfig sysConfig, ToolConfig toolConfig,
-                                       Storer storer, GeneratorConfig seriesConfig){
-        super(sysConfig, toolConfig, storer, seriesConfig);
+                                       ResultsManager resultsManager, GeneratorConfig seriesConfig){
+        super(sysConfig, toolConfig, resultsManager, seriesConfig);
     }
 
 
@@ -67,7 +67,7 @@ public class UtilizationEvaluationEngine<LS extends LinearSystem, RTT extends To
         UtilizationGeneratorConfig uSeriesConfig = (UtilizationGeneratorConfig) getGenConfig();
 
         // Cast results handler, assumes UtilizationSeriesResultsHandler is provided
-        UtilizationGeneratorStorer uResultsHandler = (UtilizationGeneratorStorer) getStorer();
+        UtilizationGeneratorResultsManager uResultsHandler = (UtilizationGeneratorResultsManager) getResultsManager();
         //System.out.println(uResultsHandler);
 
         // Total time for the execution of the series
@@ -220,12 +220,12 @@ public class UtilizationEvaluationEngine<LS extends LinearSystem, RTT extends To
 
 
         ///////////////////
-        // Storer params //
+        // ResultsManager params //
         ///////////////////
 
         Class<?> TStorerConfig;
         Class<?> TStorer;
-        Storer storer = null;
+        ResultsManager resultsManager = null;
         StorerConfig storerConfig = null;
         try{
             TStorerConfig = Class.forName(args[argc++]);
@@ -244,9 +244,9 @@ public class UtilizationEvaluationEngine<LS extends LinearSystem, RTT extends To
                                              FilenameUtils.getExtension(prevLoc)));
             storerConfig.setResultsFileLocation(newLoc);
 
-            // Instantiate Storer
+            // Instantiate ResultsManager
             Constructor<?> c2 = TStorer.getConstructor(StorerConfig.class);
-            storer = (Storer) c2.newInstance(storerConfig);
+            resultsManager = (ResultsManager) c2.newInstance(storerConfig);
 
 
         } catch (ClassNotFoundException|NoSuchMethodException|InstantiationException|IllegalAccessException|
@@ -303,7 +303,7 @@ public class UtilizationEvaluationEngine<LS extends LinearSystem, RTT extends To
         // Prepare and launch an instance of the EvaluationEngine //
         /////////////////////////////////////////////////////
 
-        UtilizationEvaluationEngine gen = new UtilizationEvaluationEngine(systemConfig, toolConfig, storer, generatorConfig);
+        UtilizationEvaluationEngine gen = new UtilizationEvaluationEngine(systemConfig, toolConfig, resultsManager, generatorConfig);
         gen.setRTTool(TTool);
         gen.setLinearSystem(TLinearSystem);
         gen.run();

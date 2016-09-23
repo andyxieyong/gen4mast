@@ -2,7 +2,7 @@ package es.unican.istr.gen4mast.storers;
 
 import es.unican.istr.gen4mast.tool.config.MastToolConfig;
 import es.unican.istr.gen4mast.tool.config.MastToolConfigurableOptions;
-import es.unican.istr.rtgen.storers.UtilizationGeneratorStorer;
+import es.unican.istr.rtgen.storers.UtilizationGeneratorResultsManager;
 import es.unican.istr.rtgen.storers.config.StorerConfig;
 import es.unican.istr.rtgen.system.LinearSystem;
 import es.unican.istr.rtgen.system.config.LinearSystemConfigurableOptions;
@@ -19,7 +19,7 @@ import java.util.LinkedHashMap;
 /**
  * Created by Juan M Rivas (jmrivasconcepcion@gmail.com) on 17/01/2016.
  */
-public class SQLiteMastUtilizationGeneratorStorer extends UtilizationGeneratorStorer {
+public class SQLiteMastUtilizationGeneratorResultsManager extends UtilizationGeneratorResultsManager {
 
     public static final String SERIES_RESULTS_TABLE_NAME = "SERIES_RESULTS";
     public static final String SYSTEM_RESULTS_TABLE_NAME = "SYSTEM_RESULTS";
@@ -33,7 +33,7 @@ public class SQLiteMastUtilizationGeneratorStorer extends UtilizationGeneratorSt
     // Constructors //
     //////////////////
 
-    public SQLiteMastUtilizationGeneratorStorer(StorerConfig config) {
+    public SQLiteMastUtilizationGeneratorResultsManager(StorerConfig config) {
         super(config);
         try {
             System.out.printf("Using SQLite database to store results : ");

@@ -24,7 +24,7 @@ public abstract class EvaluationEngine<LS extends LinearSystem, RTT extends Tool
     // Results Handler Fields //
     ////////////////////////////
 
-    private Storer storer;
+    private ResultsManager resultsManager;
 
 
     ///////////////////////////////////
@@ -40,10 +40,10 @@ public abstract class EvaluationEngine<LS extends LinearSystem, RTT extends Tool
     //////////////////
 
     public EvaluationEngine(SystemConfig sysConfig, ToolConfig toolConfig,
-                            Storer storer, GeneratorConfig genConfig){
+                            ResultsManager resultsManager, GeneratorConfig genConfig){
         this.sysConfig = sysConfig;
         this.toolConfig = toolConfig;
-        this.storer = storer;
+        this.resultsManager = resultsManager;
         this.genConfig = genConfig;
     }
 
@@ -84,8 +84,8 @@ public abstract class EvaluationEngine<LS extends LinearSystem, RTT extends Tool
         return toolConfig;
     }
 
-    public Storer getStorer() {
-        return storer;
+    public ResultsManager getResultsManager() {
+        return resultsManager;
     }
 
     public Class<LS> getTLinearSystem() {

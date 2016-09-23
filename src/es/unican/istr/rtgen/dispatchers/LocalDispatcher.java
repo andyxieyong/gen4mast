@@ -5,7 +5,7 @@ import es.unican.istr.rtgen.EvaluationEngine;
 import es.unican.istr.rtgen.dispatchers.config.DispatcherConfig;
 import es.unican.istr.rtgen.dispatchers.config.LocalDispatcherConfig;
 import es.unican.istr.rtgen.generators.config.GeneratorConfig;
-import es.unican.istr.rtgen.Storer;
+import es.unican.istr.rtgen.ResultsManager;
 import es.unican.istr.rtgen.system.LinearSystem;
 import es.unican.istr.rtgen.system.config.SystemConfig;
 import es.unican.istr.rtgen.tool.Tool;
@@ -71,9 +71,9 @@ public class LocalDispatcher<G extends EvaluationEngine, LS extends LinearSystem
                     // Create and configure a Series EvaluationEngine
                     Constructor<G> seriesConstructor = getTGenerator().getDeclaredConstructor(
                             SystemConfig.class, ToolConfig.class,
-                            Storer.class, GeneratorConfig.class);
+                            ResultsManager.class, GeneratorConfig.class);
 
-                    G series = seriesConstructor.newInstance(s, r, getStorer(), getSeriesConfig());
+                    G series = seriesConstructor.newInstance(s, r, getResultsManager(), getSeriesConfig());
 
                     series.setLinearSystem(getTLinearSystem());
                     series.setRTTool(getTRTTool());

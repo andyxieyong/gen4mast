@@ -1,6 +1,6 @@
 package es.unican.istr.tests;
 
-import es.unican.istr.gen4mast.storers.SQLiteMastUtilizationGeneratorStorer;
+import es.unican.istr.gen4mast.storers.SQLiteMastUtilizationGeneratorResultsManager;
 import es.unican.istr.gen4mast.system.MastSystem;
 import es.unican.istr.gen4mast.tool.MastTool;
 import es.unican.istr.gen4mast.tool.config.AnalysisOptions;
@@ -54,7 +54,7 @@ public class UtilizationSeriesTest {
 
         // Results Handler
         StorerConfig storerConfig = new StorerConfig();
-        SQLiteMastUtilizationGeneratorStorer res = new SQLiteMastUtilizationGeneratorStorer(storerConfig);
+        SQLiteMastUtilizationGeneratorResultsManager res = new SQLiteMastUtilizationGeneratorResultsManager(storerConfig);
 
 
         // Config Handler
